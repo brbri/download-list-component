@@ -1,0 +1,10 @@
+$checkbox-size: 20px;
+
+.custom-checkbox {
+    width: $checkbox-size;
+    height: $checkbox-size;
+}
+
+.custom-checkbox:disabled {
+    cursor: not-allowed;
+}

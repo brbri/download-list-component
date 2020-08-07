@@ -1,3 +1,10 @@
+##Installation
+Make sure node is installed on your machine. Go to the director and type in.
+type `npm install` 
+Then
+type `npm start`
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
