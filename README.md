@@ -1,4 +1,4 @@
-##Installation
+## Installation
 Make sure node is installed on your machine. Go to the director and type in.
 type `npm install` 
 Then
