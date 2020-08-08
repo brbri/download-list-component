@@ -19,10 +19,6 @@ class Table extends Component {
     this.receiveProps(rows)
   }
 
-  componentWillReceiveProps(nextProps) {
-    this.receiveProps(nextProps.rows)
-  }
-
   receiveProps = (rows = []) => {
     const newListObj = [...rows].map((item) => {
       return { ...item, selected: false };
