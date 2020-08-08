@@ -90,6 +90,8 @@ class Table extends Component {
     return (
       <button
         className={selected ? "download-btn visible" : "download-btn"}
+        tabindex="0"
+        aria-label="download-selected"
         onClick={this.handleDownload}
       >
         <svg

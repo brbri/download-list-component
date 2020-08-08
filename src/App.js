@@ -44,7 +44,7 @@ class App extends Component {
             cols={cols}
             rows={downloads || []}
           />
-          <h3>Demonstrating reusability of this component</h3>
+          <h3>Component is reusable, responsive and accessible!</h3>
           <Table
             cols={cols}
             rows={[
