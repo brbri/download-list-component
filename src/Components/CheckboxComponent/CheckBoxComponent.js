@@ -5,6 +5,7 @@ import "./CheckBoxComponent.scss";
 export default function CheckBoxComponent(props) {
   const { name, checked, state, disabled, onChange } = props;
   return (
+    <div className="form-group">
     <input
       ref={(input) => {
         if (input) {
@@ -26,8 +27,10 @@ export default function CheckBoxComponent(props) {
       name={name}
       aria-label={name}
       onChange={onChange}
-      checked={checked}
+      checked={checked ? "checked" : ""}
       disabled={disabled}
     ></input>
+    <label htmlFor={name} onClick={onChange}></label>
+    </div>
   );
 }

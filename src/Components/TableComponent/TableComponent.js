@@ -86,7 +86,7 @@ class Table extends Component {
     return (
       <button
         className={selected ? "download-btn visible" : "download-btn"}
-        tabindex="0"
+        tabIndex="0"
         aria-label="download-selected"
         onClick={this.handleDownload}
       >
@@ -122,6 +122,7 @@ class Table extends Component {
             <tr>
               <th data-testid="selectAll">
                 <Checkbox
+                  name="selectAll"
                   onChange={this.handleToggleAll}
                   state={this.checkToggleState(list, selectedRows)}
                 />

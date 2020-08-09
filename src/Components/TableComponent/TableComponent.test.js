@@ -22,7 +22,7 @@ describe('Check Table', () => {
         checkBoxes.forEach((checkbox) => {
             fireEvent.click(checkbox);
         })
-        expect(selectAllCheckbox.checked).toEqual(true);
+        expect(selectAllCheckbox).toBeChecked();
     })
 
     it('should uncheck select-all box', () => {
@@ -39,7 +39,7 @@ describe('Check Table', () => {
             fireEvent.click(checkbox);
         })
 
-        expect(selectAllCheckbox.checked).toEqual(false);
+        expect(selectAllCheckbox).not.toBeChecked();
     })
 
     it('should be indeterminate select-all box', () => {
@@ -52,16 +52,15 @@ describe('Check Table', () => {
         fireEvent.click(checkBoxes[0]);
 
         expect(selectAllCheckbox.indeterminate).toEqual(true);
-        expect(selectAllCheckbox.checked).toEqual(false);
+        expect(selectAllCheckbox).not.toBeChecked();
     })
 
     it('should disable all checkboxes', () => {
-        const { getByTestId, container } = render(<TableComponent cols={[{name: 'name', header: 'Name'}, {name: 'device', header: 'Device'}, {name: 'path', header: 'Path'}, {name: 'status', header: 'Status'}]} rows={[
+        const { container } = render(<TableComponent cols={[{name: 'name', header: 'Name'}, {name: 'device', header: 'Device'}, {name: 'path', header: 'Path'}, {name: 'status', header: 'Status'}]} rows={[
             {name: 'jon.exe', device: 'Jon', path: '\\Device\\HarddiskVolume2\\Windows\\System32\\jon.exe', status: 'scheduled'},
             {name: 'tyrion.exe', device: 'Tyrion', path: '\\Device\\HarddiskVolume2\\Windows\\System32\\tyrion.exe', status: 'scheduled'}
         ]} />);
         const rows = container.querySelectorAll('.table-row');
-        const selectAllCheckbox = getByTestId('selectAll').querySelector('input');
 
         rows.forEach(row => {
             const checkbox = row.querySelector('input');
