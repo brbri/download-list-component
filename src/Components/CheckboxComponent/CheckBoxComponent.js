@@ -27,9 +27,10 @@ export default function CheckBoxComponent(props) {
       name={name}
       aria-label={name}
       onChange={onChange}
-      checked={checked ? "checked" : ""}
-      aria-checked={checked ? "checked" : ""}
+      checked={checked}
+      aria-checked={checked}
       disabled={disabled}
+      readOnly={disabled}
     ></input>
     <label htmlFor={name} onClick={onChange}></label>
     </div>
