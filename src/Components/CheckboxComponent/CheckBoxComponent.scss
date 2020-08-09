@@ -1,19 +1,24 @@
 $checkbox-border: #808080;
 $checkbox-checked: #2882ff;
 
-.form-group {
+.form-group.custom-checkbox {
   display: block;
 
-  input {
-    padding: 0;
-    height: initial;
-    width: initial;
-    margin-bottom: 0;
-    display: none;
-    cursor: pointer;
-    #text {
-        display: none;
+  input[type="checkbox"] {
+    opacity: 0;
+  }
+
+  input[type="checkbox"] {
+    &:focus {
+      opacity: 0;
+      outline: 0;
     }
+  }
+
+  input[type="checkbox"] + label {
+    outline: 1;
+    user-select: none;
+    margin-top: -24px;
   }
 
   label {
@@ -39,39 +44,39 @@ $checkbox-checked: #2882ff;
   }
 
   input:checked {
-      & + label:before {
-        border: 2px solid $checkbox-checked;
-        background-color: $checkbox-checked;
-      }
-      & + label:after {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 4px;
-        left: 8px;
-        width: 5px;
-        height: 11px;
-        border: solid white;
-        border-width: 0 2px 2px 0;
-        transform: rotate(45deg);
-      }
+    & + label:before {
+      border: 2px solid $checkbox-checked;
+      background-color: $checkbox-checked;
+    }
+    & + label:after {
+      content: "";
+      display: block;
+      position: absolute;
+      top: 4px;
+      left: 8px;
+      width: 5px;
+      height: 11px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+    }
   }
 
   input:indeterminate {
     & + label:before {
-        border: 2px solid $checkbox-checked;
-        background-color: $checkbox-checked;
+      border: 2px solid $checkbox-checked;
+      background-color: $checkbox-checked;
     }
     & + label:after {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0px;
-        left: 7px;
-        width: 10px;
-        height: 11px;
-        border: solid white;
-        border-width: 0 0 2px 0;
+      content: "";
+      display: block;
+      position: absolute;
+      top: 0px;
+      left: 7px;
+      width: 10px;
+      height: 11px;
+      border: solid white;
+      border-width: 0 0 2px 0;
     }
   }
 
