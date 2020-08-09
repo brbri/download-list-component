@@ -6,19 +6,22 @@ $checkbox-checked: #2882ff;
 
   input[type="checkbox"] {
     opacity: 0;
+    width: 20px;
+    height: 20px;
   }
 
   input[type="checkbox"] {
     &:focus {
-      opacity: 0;
-      outline: 0;
+      opacity: 1;
+      outline: 1;
     }
   }
 
   input[type="checkbox"] + label {
     outline: 1;
     user-select: none;
-    margin-top: -24px;
+    margin-top: -26px;
+    margin-left: 2px;
   }
 
   label {
